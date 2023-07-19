@@ -1,0 +1,12 @@
+@import "@/styles/base.scss";
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+
+  @include for-size(md) {
+    * + * {
+      margin-left: 36px;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@import "@/styles/base.scss";
+
+.container {
+  display: flex;
+  margin-top: 50px;
+  flex-direction: column;
+
+  @include for-size(md) {
+    margin-top: 100px;
+    flex-direction: row;
+  }
+
+  h4 {
+    flex-shrink: 0;
+    margin-bottom: 30px;
+    @include for-size(md) {
+      margin-bottom: 0;
+      width: 266px;
+    }
+  }
+
+  .content {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 40px;
+  }
+}
+
+.experienceItem {
+  display: flex;
+  flex-direction: column;
+
+  & + & {
+    margin-top: 50px;
+  }
+
+  .timeline {
+    font-size: 18px;
+    line-height: 40px;
+  }
+  .title {
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: bold;
+  }
+  .description {
+    font-size: 18px;
+    line-height: 28px;
+    @include for-size(md) {
+      margin-top: 12px;
+      font-size: 24px;
+      line-height: 40px;
+    }
+  }
+}

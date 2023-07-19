@@ -1,0 +1,42 @@
+@import "@/styles/base.scss";
+
+.link {
+  font-size: 24px;
+  margin-right: 24px;
+  margin-bottom: 50px;
+  @include for-size(md) {
+    font-size: 18px;
+    line-height: 28px;
+    margin-right: 48px;
+    margin-bottom: 0;
+  }
+  --bg: #000;
+
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 2px;
+    left: 0;
+    background-color: var(--bg);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+    @include for-size(md) {
+      width: 100%;
+    }
+  }
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+.link.dark {
+  --bg: #fff;
+}
+.active {
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

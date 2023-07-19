@@ -1,0 +1,34 @@
+@import "@/styles/base.scss";
+.header {
+  @extend .Container;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  @include for-size(md) {
+    padding: 48px 0;
+  }
+
+  nav {
+    margin-right: auto;
+    display: none;
+    align-items: center;
+    @include for-size(md) {
+      display: flex;
+    }
+  }
+
+  .iconContainer {
+    cursor: pointer;
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  .mobileMenuButton {
+    margin-right: auto;
+    @include for-size(md) {
+      display: none;
+    }
+  }
+}

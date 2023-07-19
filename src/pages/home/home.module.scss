@@ -1,0 +1,153 @@
+@import "@/styles/base.scss";
+
+.main {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  @include for-size(md) {
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+  h1 {
+    font-weight: bold;
+    margin-bottom: 4px;
+    width: fit-content;
+
+    font-size: 32px;
+    line-height: 44px;
+    @include for-size(md) {
+      font-size: 60px;
+      line-height: 82px;
+    }
+  }
+
+  h2 {
+    margin-top: 50px;
+    @include for-size(md) {
+      margin-top: 100px;
+    }
+  }
+
+  h3 {
+    margin-top: 50px;
+    margin-bottom: 32px;
+    @include for-size(md) {
+      margin-top: 80px;
+      margin-bottom: 44px;
+    }
+  }
+
+  .titleContainer {
+    position: relative;
+    z-index: 1;
+    .title {
+      @extend .gradient;
+      font-size: 26px;
+      line-height: 33px;
+      @include for-size(md) {
+        font-size: 60px;
+        line-height: 82px;
+      }
+    }
+    .title.dark {
+      @extend .gradient-dark;
+    }
+
+    .subTitle {
+      font-size: 18px;
+      margin-top: 44px;
+      margin-bottom: 100px;
+      @include for-size(md) {
+        font-size: 20px;
+        margin-top: 48px;
+        margin-bottom: 148px;
+      }
+    }
+  }
+
+  .about {
+    font-size: 24px;
+    line-height: 42px;
+    font-weight: 300;
+    margin-bottom: 32px;
+    @include for-size(md) {
+      font-size: 36px;
+      line-height: 60px;
+      margin-bottom: 48px;
+    }
+  }
+
+  .connect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 22px;
+    margin-top: 50px;
+    border-radius: 30px;
+    background-color: $light-grey;
+    font-size: 24px;
+    line-height: 42px;
+    white-space: nowrap;
+    @include for-size(md) {
+      margin-top: 100px;
+      padding: 176px;
+      font-size: 36px;
+      line-height: 49px;
+    }
+
+    a {
+      color: $blue;
+      position: relative;
+      @include for-size(md) {
+        margin-top: 6px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background-color: $blue;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
+  }
+
+  .connect.dark {
+    background-color: $dark-grey;
+  }
+
+  .background {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.8;
+    height: 450px;
+    width: 700px;
+    left: -150px;
+    top: -170px;
+    @include for-size(md) {
+      height: auto;
+      width: auto;
+      top: -240px;
+      left: -100px;
+    }
+    @include for-size(lg) {
+      top: -240px;
+      left: -60px;
+    }
+    @include for-size(xl) {
+      top: -240px;
+      left: -150px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import "@/styles/reset.scss";
+@import "@/styles/fonts.scss";
+
+:root {
+  /* Your default theme */
+  --background: white;
+  --foreground: black;
+}
+
+[data-theme="dark"] {
+  --background: black;
+  --foreground: white;
+}
+
+.dark,
+.dark body {
+  background: black;
+  color: white;
+}
